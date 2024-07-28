@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Product Search Results</h1>
+    <div class="results-container">
+        <div class="column">
+            <h2>Amazon Results ({{ amazon_count }} products)</h2>
+            {% if amazon_results %}
+                {% for product in amazon_results %}
+                    <div class="product">
+                        <img src="{{ product['image_url'] }}" alt="{{ product['title'] }}">
+                        <div class="product-info">
+                            <h3>{{ product['title'] }}</h3>
+                            <p>Price: {{ product['price'] }}</p>
+                            <p>MRP: {{ product['mrp'] }}</p>
+                            <p>Rating: {{ product['rating'] }} stars</p>
+                            <a href="{{ product['product_url'] }}" target="_blank" class="button">View on Amazon</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No Amazon results found.</p>
+            {% endif %}
+        </div>
+        <div class="column">
+            <h2>Flipkart Results ({{ flipkart_count }} products)</h2>
+            {% if flipkart_results %}
+                {% for product in flipkart_results %}
+                    <div class="product">
+                        <img src="{{ product['image_url'] }}" alt="{{ product['title'] }}">
+                        <div class="product-info">
+                            <h3>{{ product['title'] }}</h3>
+                            <p>Price: {{ product['price'] }}</p>
+                            <p>MRP: {{ product['mrp'] }}</p>
+                            <p>Rating: {{ product['rating'] }} stars</p>
+                            <a href="{{ product['product_url'] }}" target="_blank" class="button">View on Flipkart</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No Flipkart results found.</p>
+            {% endif %}
+        </div>
+    </div>
+    <a href="/" class="new-search-button">New Search</a>
+</body>
+</html>
