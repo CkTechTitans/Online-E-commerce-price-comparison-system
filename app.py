@@ -34,7 +34,7 @@ def fetch_amazon_data(query):
     querystring = {
         "query": urllib.parse.quote(query),
         "page": "1",
-        "country": "IN",
+        "country": "US",
         "sort_by": "RELEVANCE",
         "product_condition": "ALL"
     }
