@@ -1,23 +1,39 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h1 {
-    margin-top: 20px;
     color: #333;
 }
 
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+h1 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+/* Container Styles */
 .results-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 90%;
     margin: 20px 0;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .column {
@@ -25,16 +41,20 @@ h1 {
     margin: 0 10px;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-sizing: border-box; /* Ensures padding is included in the width */
+    box-sizing: border-box;
+    min-width: 300px;
 }
 
 .column h2 {
     text-align: center;
     color: #0056b3;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
+/* Product Styles */
 .product {
     display: flex;
     flex-direction: row;
@@ -42,6 +62,11 @@ h1 {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product:hover {
+    background-color: #f1f1f1;
 }
 
 .product img {
@@ -57,21 +82,22 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100px; /* Ensures minimum height for alignment */
+    min-height: 100px;
 }
 
 .product-info h3 {
     margin: 0;
     color: #333;
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 .product-info p {
     margin: 5px 0;
     color: #007bff;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
+/* Button Styles */
 .button {
     display: inline-block;
     padding: 10px 15px;
@@ -101,6 +127,7 @@ h1 {
     background-color: #218838;
 }
 
+/* Comparison Section Styles */
 .comparison-section {
     margin-top: 20px;
     text-align: center;
@@ -108,12 +135,15 @@ h1 {
 
 .comparison-section h2 {
     margin-bottom: 10px;
+    font-size: 1.8rem;
 }
 
 .comparison-results {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .comparison-results .result {
@@ -122,4 +152,22 @@ h1 {
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .results-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .comparison-results .result {
+        width: 100%;
+    }
 }
