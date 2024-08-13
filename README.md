@@ -15,7 +15,7 @@ Follow these steps to set up and run the application:
 1. **Clone the Repository**
 
    ```bash
-  https://github.com/CkTechTitans/Online-E-commerce-price-comparison-system.git
+  https://github.com/CkTechTitans/Online-E-commerce-price-comparison-system.git'''
 
 2..** Install dependencies**
 Set Up Environment Variables
